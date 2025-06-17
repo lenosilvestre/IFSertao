@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discursiva</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+    <link rel="icon" type="image/png" href="img/studying.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="progressbar">
+        <div id="progress">
+            <div id="progress-text">0%</div>
+        </div>
+    </div>
+
+    <div id="container">
+
+
+        <ul>
+
+            <li class="btinicio">
+                <img src="img/casa.png" alt="início" width="30" height="30">
+                <h3><a href="index.html"> Início </a></h3>
+
+            </li>
+        </ul>
+        <div id="legislacao">
+            <h1>Conteúdo Programático</h1>
+            <form>
+                <ul>
+                    <h2>EDUCAÇÃO PROFISSIONAL E TECNOLÓGICA</h2>
+                    <li>
+                        <label><input type="checkbox" id="educ_1" onclick="updateProgressBar(this.id)"> <a href="./pdfs/Bases conceituais da educação profissional e tecnológica - PROFEPT _PAULO CÉSAR.pdf" target="_blank" rel="noopener noreferrer">
+                            1. Educação profissional e tecnológica no Brasil: organização e bases conceituais</a></label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="educ_2" onclick="updateProgressBar(this.id)"> <a href="./pdfs/PPP_-_01_de_agosto_2013_DB.pdf" target="_blank" rel="noopener noreferrer">
+                            2. Projeto Político-Pedagógico do IFRN</a></label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="educ_3" onclick="updateProgressBar(this.id)"> 3. Identidade e concepções institucionais</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="educ_4" onclick="updateProgressBar(this.id)"> 4. Princípios e diretrizes orientadores da prática pedagógica</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="educ_5" onclick="updateProgressBar(this.id)"> 5. Concepções, princípios e fundamentos do currículo integrado na educação profissional e tecnológica</label>
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Recuperar os estados marcados dos checkboxes armazenados no localStorage
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+                var checkboxId = checkbox.id;
+                var isChecked = localStorage.getItem(checkboxId) === "true";
+                checkbox.checked = isChecked;
+            });
+
+            // Atualizar a barra de progresso inicialmente
+            updateProgressBar();
+        });
+
+        function updateProgressBar(checkboxId) {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            var checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            var progress = (checkedCheckboxes.length / checkboxes.length) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+            document.getElementById('progress-text').textContent = progress.toFixed(2) + '%';
+
+            // Armazenar o estado marcado no localStorage
+            if (checkboxId) {
+                var checkbox = document.getElementById(checkboxId);
+                localStorage.setItem(checkboxId, checkbox.checked);
+            }
+        }
+    </script>
+</body>
+
+</html>

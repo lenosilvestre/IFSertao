@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legislação e Educação</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+    <link rel="icon" type="image/png" href="img/studying.png">
+</head>
+
+<body>
+    <div id="progressbar">
+        <div id="progress">
+            <div id="progress-text">0%</div>
+        </div>
+    </div>
+
+    <div id="container">
+
+
+        <ul>
+
+            <li class="btinicio">
+                <img src="img/casa.png" alt="início" width="30" height="30">
+                <h3><a href="index.html"> Início </a></h3>
+
+            </li>
+        </ul>
+        <div id="legislacao">
+            <h1>Conteúdo Programático</h1>
+            <form>
+                <ul>
+                    <h2>CONHECIMENTOS PEDAGÓGICOS E EDUCAÇÃO PROFISSIONAL TÉCNICA E TECNOLÓGICA</h2>
+                    <li>
+                        <label><input type="checkbox" id="ped_1" onclick="updateProgressBar(this.id)"> 1. Os saberes necessários ao exercício da docência.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="ped_2" onclick="updateProgressBar(this.id)"> 2. As inter-relações entre educação e sociedade: reprodução e transformação.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="ped_3" onclick="updateProgressBar(this.id)"> 3. A Didática e a formação de professores: abordagens conceituais e metodológicas.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="ped_4" onclick="updateProgressBar(this.id)"> 4. A ação docente numa perspectiva crítica: planejamento e novas metodologias do processo de ensino-aprendizagem.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="ped_5" onclick="updateProgressBar(this.id)"> 5. A avaliação no processo de ensino aprendizagem.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="ped_6" onclick="updateProgressBar(this.id)"> 6. Os fundamentos e ação docente nas diferentes tendências pedagógicas.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="ped_7" onclick="updateProgressBar(this.id)"> 7. A relação professor-aluno: abordagens e concepções.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="ped_8" onclick="updateProgressBar(this.id)"> 8. A Didática, a interdisciplinaridade e a transdisciplinaridade: abordagens conceituais e metodológicas.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="ped_9" onclick="updateProgressBar(this.id)"> 9. A ação docente como atividade integradora da metodologia de ensino-aprendizagem.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="ped_10" onclick="updateProgressBar(this.id)"> 10. Constituição histórica e legal da Educação Profissional no Brasil. História, Princípios, Legislação e funcionamento da Educação Profissional, Científica e Tecnológica (EPCT). Currículo, conhecimento e cultura. Currículo integrado na EPCT. Metodologias de ensino e a interdisciplinaridade na EPCT.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="ped_11" onclick="updateProgressBar(this.id)"> 11. Indissociabilidade entre ensino, pesquisa e extensão na EPCT.</label>
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Recuperar os estados marcados dos checkboxes armazenados no localStorage
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+                var checkboxId = checkbox.id;
+                var isChecked = localStorage.getItem(checkboxId) === "true";
+                checkbox.checked = isChecked;
+            });
+
+            // Atualizar a barra de progresso inicialmente
+            updateProgressBar();
+        });
+
+        function updateProgressBar(checkboxId) {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            var checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            var progress = (checkedCheckboxes.length / checkboxes.length) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+            document.getElementById('progress-text').textContent = progress.toFixed(2) + '%';
+
+            // Armazenar o estado marcado no localStorage
+            if (checkboxId) {
+                var checkbox = document.getElementById(checkboxId);
+                localStorage.setItem(checkboxId, checkbox.checked);
+            }
+        }
+    </script>
+</body>
+
+</html>

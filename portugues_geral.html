@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letras IFRN</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+    <link rel="icon" type="image/png" href="img/studying.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="progressbar">
+        <div id="progress">
+            <div id="progress-text">0%</div>
+        </div>
+    </div>
+
+    <ul>
+        <li class="btinicio">
+            <img src="img/casa.png" alt="início" width="30" height="30">
+            <h3><a href="index.html"> Início </a></h3>
+        </li>
+    </ul>
+
+    <form>
+        <h2>LÍNGUA PORTUGUESA</h2>
+        <ul>
+            <li>
+                <label><input type="checkbox" id="letras_1" onclick="updateProgressBar(this.id)"> 1. Processos de
+                    composição de texto: descrição, narração, dissertação e injunção.</label>
+            </li>
+            <li>
+                <label><input type="checkbox" id="letras_2" onclick="updateProgressBar(this.id)"> 2. Morfossintaxe
+                    dos nomes e determinantes.</label>
+            </li>
+            <li>
+                <label><input type="checkbox" id="letras_3" onclick="updateProgressBar(this.id)"> 3. Processos de
+                    coordenação e subordinação.</label>
+            </li>
+            <li>
+                <label><input type="checkbox" id="letras_4" onclick="updateProgressBar(this.id)"> 4. Estrutura do
+                    período e da oração: aspectos semânticos e sintáticos.</label>
+            </li>
+            <li>
+                <label><input type="checkbox" id="letras_5" onclick="updateProgressBar(this.id)"> 5. Regência
+                    Nominal e Verbal.</label>
+            </li>
+            <li>
+                <label><input type="checkbox" id="letras_6" onclick="updateProgressBar(this.id)"> 6. Emprego do
+                    sinal indicativo da crase.</label>
+            </li>
+            <li>
+                <label><input type="checkbox" id="letras_7" onclick="updateProgressBar(this.id)"> 7. A variação
+                    linguística e a língua padrão.</label>
+            </li>
+            <li>
+                <label><input type="checkbox" id="letras_8" onclick="updateProgressBar(this.id)"> 8. As funções da
+                    linguagem. Língua escrita e falada: a influência da oralidade na língua escrita.</label>
+            </li>
+            <li>
+                <label><input type="checkbox" id="letras_9" onclick="updateProgressBar(this.id)"> 9. Coesão e
+                    coerência Textual</label>
+            </li>
+        </ul>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Recuperar os estados marcados dos checkboxes armazenados no localStorage
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+                var checkboxId = checkbox.id;
+                var isChecked = localStorage.getItem(checkboxId) === "true";
+                checkbox.checked = isChecked;
+            });
+
+            // Atualizar a barra de progresso inicialmente
+            updateProgressBar();
+        });
+
+        function updateProgressBar(checkboxId) {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            var checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            var progress = (checkedCheckboxes.length / checkboxes.length) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+            document.getElementById('progress-text').textContent = progress.toFixed(2) + '%';
+
+
+            // Armazenar o estado marcado no localStorage
+            if (checkboxId) {
+                var checkbox = document.getElementById(checkboxId);
+                localStorage.setItem(checkboxId, checkbox.checked);
+            }
+        }
+    </script>
+</body>
+
+</html>
