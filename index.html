@@ -5,23 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conteúdo IFRN 2025</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
     <link rel="icon" type="image/png" href="img/studying.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Metadados Open Graph -->
-    <meta property="og:title" content="Conteúdo IFRN 2025 - Concurso Público">
-    <meta property="og:description" content="Página de estudos para o Concurso Público para Professor de Ensino Básico, Técnico e Tecnológico - IFRN 2025. Acesse materiais e cronogramas para sua preparação.">
-    <meta property="og:image" content="img/apresentacao.png">
-    <meta property="og:url" content="https://lenosilvestre.github.io/IFPE/">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="pt_BR">
 
-    <!-- Metadados para WhatsApp -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Conteúdo IFRN 2025 - Concurso Público">
-    <meta name="twitter:description" content="Página de estudos para o Concurso Público para Professor de Ensino Básico, Técnico e Tecnológico - IFRN 2025. Acesse materiais e cronogramas para sua preparação.">
-    <meta name="twitter:image" content="img/apresentacao.png">
+
+    <script type="module">
+        import { getUserId } from './js/auth.js';
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            await getUserId();
+        });
+    </script>
+
 </head>
 
 <body>
