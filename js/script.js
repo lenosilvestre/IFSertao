@@ -1,0 +1,79 @@
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+const supabaseUrl = 'https://cihubwjrcljogtkqyove.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNpaHVid2pyY2xqb2d0a3F5b3ZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAxMjI4MzAsImV4cCI6MjA2NTY5ODgzMH0.jTfkIfibjtcV6U_hZiwA5cthLssrrGpBRY61JkQmYPo';
+export const supabase = createClient(supabaseUrl, supabaseKey);
+
+// Função para salvar progresso no Supabase
+export async function saveProgressSupabase(userId, checkboxesSelector = 'input[type="checkbox"]') {
+    const checkboxes = document.querySelectorAll(checkboxesSelector);
+    const progressData = {};
+    checkboxes.forEach(cb => {
+        progressData[cb.id] = cb.checked;
+    });
+
+    await supabase
+        .from('progresso')
+        .upsert([{ user_id: userId, data: progressData }]);
+}
+
+// Função para carregar progresso do Supabase
+export async function loadProgressSupabase(userId, checkboxesSelector = 'input[type="checkbox"]') {
+    const { data, error } = await supabase
+        .from('progresso')
+        .select('data')
+        .eq('user_id', userId)
+        .single();
+
+    if (data && data.data) {
+        const checkboxes = document.querySelectorAll(checkboxesSelector);
+        checkboxes.forEach(cb => {
+            cb.checked = !!data.data[cb.id];
+        });
+    }
+}
+
+const loginForm = document.getElementById('login-form');
+const signupForm = document.getElementById('signup-form');
+
+if (loginForm) {
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+        const { error } = await supabase.auth.signInWithPassword({
+            email,
+            password,
+        });
+        if (error) {
+            alert('Erro ao fazer login: ' + error.message);
+        } else {
+            alert('Login bem-sucedido!');
+            // Recupera o parâmetro redirect da URL, se existir
+            const params = new URLSearchParams(window.location.search);
+            const redirect = params.get('redirect');
+            if (redirect) {
+                window.location.href = redirect;
+            } else {
+                window.location.href = "index.html";
+            }
+        }
+    });
+}
+
+if (signupForm) {
+    signupForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('signup-email').value;
+        const password = document.getElementById('signup-password').value;
+        const { error } = await supabase.auth.signUp({
+            email,
+            password,
+        });
+        if (error) {
+            alert('Erro ao cadastrar: ' + error.message);
+        } else {
+            alert('Cadastro bem-sucedido! Verifique seu e-mail.');
+        }
+    });
+}

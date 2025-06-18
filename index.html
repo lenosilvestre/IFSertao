@@ -9,19 +9,30 @@
     <link rel="icon" type="image/png" href="img/studying.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Metadados Open Graph -->
-    <meta property="og:title" content="Conteúdo IFRN 2025 - Concurso Público">
-    <meta property="og:description" content="Página de estudos para o Concurso Público para Professor de Ensino Básico, Técnico e Tecnológico - IFRN 2025. Acesse materiais e cronogramas para sua preparação.">
-    <meta property="og:image" content="img/apresentacao.png">
-    <meta property="og:url" content="https://lenosilvestre.github.io/IFPE/">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="pt_BR">
 
-    <!-- Metadados para WhatsApp -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Conteúdo IFRN 2025 - Concurso Público">
-    <meta name="twitter:description" content="Página de estudos para o Concurso Público para Professor de Ensino Básico, Técnico e Tecnológico - IFRN 2025. Acesse materiais e cronogramas para sua preparação.">
-    <meta name="twitter:image" content="img/apresentacao.png">
+
+<script type="module">
+    import { supabase } from './js/script.js';
+
+    // Função para obter o user_id do usuário autenticado
+    async function getUserId() {
+        const { data } = await supabase.auth.getUser();
+        if (data && data.user) {
+            return data.user.id;
+        } else {
+            // Redireciona para login se não estiver autenticado
+            window.location.href = "login.html";
+        }
+    }
+
+    // Chama a verificação assim que a página carregar
+    document.addEventListener("DOMContentLoaded", async function () {
+        await getUserId();
+        // Se não estiver logado, será redirecionado automaticamente
+        // Se quiser executar outras funções para usuários logados, coloque aqui
+    });
+</script>
+
 </head>
 
 <body>
