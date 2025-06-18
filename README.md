@@ -1,10 +1,10 @@
-**Página de Estudos para o Concurso Público IFRN 2025**
+**Página de Estudos para o Concurso Público IF Sertão 2025**
 
 ---
 
-**Conteúdo IFRN 2025**
+**Conteúdo IF Sertão 2025**
 
-Esta página foi criada para fornecer recursos de estudo para o Concurso Público para Professor de Ensino Básico, Técnico e Tecnológico do IFRN 2025. Aqui você encontrará materiais relevantes para se preparar adequadamente para o processo seletivo.
+Esta página foi criada para fornecer recursos de estudo para o Concurso Público para Professor de Ensino Básico, Técnico e Tecnológico do IF Sertão 2025. Aqui você encontrará materiais relevantes para se preparar adequadamente para o processo seletivo.
 
 ---
 
@@ -12,23 +12,23 @@ Esta página foi criada para fornecer recursos de estudo para o Concurso Públic
 
 1. **Edital Oficial e Anexos:**
    - Acesse o edital oficial e seus anexos para obter informações detalhadas sobre o concurso.
-   - [Clique aqui para acessar o edital](https://cvest.ifpe.edu.br/concurso2016_doc/arquivos/08.%20Edital-125-2016-GR%20-%20Retificado%20em%2018.01.2017%20no%20DOU.pdf)
+   - [Clique aqui para acessar o edital](https://www.fundatec.org.br/portal/concursos/index_concursos.php?concurso=981)
 
 2. **Legislação:**
    - Encontre informações sobre legislação pertinente ao concurso.
-   - [Clique aqui para acessar a legislação](https://lenosilvestre.github.io/IFPE/legislacao.html)
+   - [Clique aqui para acessar a legislação](https://lenosilvestre.github.io/IFSertao/legislacao.html)
 
 3. **Específicos de Biologia:**
    - Estude os tópicos específicos de Biologia para o concurso.
-   - [Clique aqui para acessar os materiais de Biologia](https://lenosilvestre.github.io/IFPE/biologia.html)
+   - [Clique aqui para acessar os materiais de Biologia](https://lenosilvestre.github.io/IFSertao/biologia.html)
 
 4. **Específicos de Informática:**
    - Aprofunde-se nos conteúdos específicos de Informática exigidos no concurso.
-   - [Clique aqui para acessar os materiais de Informática](https://lenosilvestre.github.io/IFPE/informatica.html)
+   - [Clique aqui para acessar os materiais de Informática](https://lenosilvestre.github.io/IFSertao/informatica.html)
 
 5. **Específicos de Letras Português:**
    - Explore os recursos relacionados aos conteúdos específicos de Letras Português.
-   - [Clique aqui para acessar os materiais de Letras Português](https://lenosilvestre.github.io/IFPE/letras.html)
+   - [Clique aqui para acessar os materiais de Letras Português](https://lenosilvestre.github.io/IFSertao/letras.html)
 
 ---
 
@@ -44,7 +44,7 @@ Esta página foi criada para fornecer recursos de estudo para o Concurso Públic
 
 **Sobre o Desenvolvedor:**
 
-Este projeto foi desenvolvido por Leno Silvestre como uma iniciativa para auxiliar os candidatos no processo de preparação para o Concurso Público IFRN 2025.
+Este projeto foi desenvolvido por Leno Silvestre como uma iniciativa para auxiliar os candidatos no processo de preparação para o Concurso Público IF Sertão 2025.
 
 ---
 
