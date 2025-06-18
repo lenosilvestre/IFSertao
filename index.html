@@ -5,33 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conteúdo IFRN 2025</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
     <link rel="icon" type="image/png" href="img/studying.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
 
 
-<script type="module">
-    import { supabase } from './js/script.js';
+    <script type="module">
+        import { getUserId } from './js/auth.js';
 
-    // Função para obter o user_id do usuário autenticado
-    async function getUserId() {
-        const { data } = await supabase.auth.getUser();
-        if (data && data.user) {
-            return data.user.id;
-        } else {
-            // Redireciona para login se não estiver autenticado
-            window.location.href = "login.html";
-        }
-    }
-
-    // Chama a verificação assim que a página carregar
-    document.addEventListener("DOMContentLoaded", async function () {
-        await getUserId();
-        // Se não estiver logado, será redirecionado automaticamente
-        // Se quiser executar outras funções para usuários logados, coloque aqui
-    });
-</script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            await getUserId();
+        });
+    </script>
 
 </head>
 

@@ -2,13 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistemas de Informação</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
-    <link rel="icon" type="image/png" href="img/studying.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistemas de Informação</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+  <link rel="icon" type="image/png" href="img/studying.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <script type="module">
+    import { initProgress } from './js/progress.js';
+    import { saveProgressSupabase, loadProgressSupabase } from './js/script.js';
+
+    document.addEventListener("DOMContentLoaded", initProgress);
+  </script>
 </head>
 
 <body>
@@ -33,69 +40,52 @@
       <h1>Conteúdo Programático</h1>
       <form>
         <ul>
-      <li>
-        <label><input type="checkbox" id="info_1" onclick="updateProgressBar(this.id)"> 1. Fundamentos de Banco de Dados e Linguagem SQL</label>
-      </li>
-      <li>
-        <label><input type="checkbox" id="info_2" onclick="updateProgressBar(this.id)"> 2. Programação orientada a objeto</label>
-      </li>
-      <li>
-        <label><input type="checkbox" id="info_3" onclick="updateProgressBar(this.id)"> 3. Experiência do Usuário</label>
-      </li>
-      <li>
-        <label><input type="checkbox" id="info_4" onclick="updateProgressBar(this.id)"> 4. Engenharia de Software</label>
-      </li>
-      <li>
-        <label><input type="checkbox" id="info_5" onclick="updateProgressBar(this.id)"> 5. Desenvolvimento Front-end e Back-end</label>
-      </li>
-      <li>
-        <label><input type="checkbox" id="info_6" onclick="updateProgressBar(this.id)"> 6. Redes de computadores: principais tecnologias</label>
-      </li>
-      <li>
-        <label><input type="checkbox" id="info_7" onclick="updateProgressBar(this.id)"> 7. Fundamentos e tecnologias de redes sem fio</label>
-      </li>
-      <li>
-        <label><input type="checkbox" id="info_8" onclick="updateProgressBar(this.id)"> 8. Segurança e auditoria de sistemas</label>
-      </li>
-      <li>
-        <label><input type="checkbox" id="info_9" onclick="updateProgressBar(this.id)"> 9. Sistema de Informação</label>
-      </li>
-      <li>
-        <label><input type="checkbox" id="info_10" onclick="updateProgressBar(this.id)"> 10. Montagem e Manutenção de Computadores</label>
-      </li>
+          <li>
+            <label><input type="checkbox" id="info_1" onclick="updateProgressBar(this.id)"> 1. Fundamentos de Banco de
+              Dados e Linguagem SQL</label>
+          </li>
+          <li>
+            <label><input type="checkbox" id="info_2" onclick="updateProgressBar(this.id)"> 2. Programação orientada a
+              objeto</label>
+          </li>
+          <li>
+            <label><input type="checkbox" id="info_3" onclick="updateProgressBar(this.id)"> 3. Experiência do
+              Usuário</label>
+          </li>
+          <li>
+            <label><input type="checkbox" id="info_4" onclick="updateProgressBar(this.id)"> 4. Engenharia de
+              Software</label>
+          </li>
+          <li>
+            <label><input type="checkbox" id="info_5" onclick="updateProgressBar(this.id)"> 5. Desenvolvimento Front-end
+              e Back-end</label>
+          </li>
+          <li>
+            <label><input type="checkbox" id="info_6" onclick="updateProgressBar(this.id)"> 6. Redes de computadores:
+              principais tecnologias</label>
+          </li>
+          <li>
+            <label><input type="checkbox" id="info_7" onclick="updateProgressBar(this.id)"> 7. Fundamentos e tecnologias
+              de redes sem fio</label>
+          </li>
+          <li>
+            <label><input type="checkbox" id="info_8" onclick="updateProgressBar(this.id)"> 8. Segurança e auditoria de
+              sistemas</label>
+          </li>
+          <li>
+            <label><input type="checkbox" id="info_9" onclick="updateProgressBar(this.id)"> 9. Sistema de
+              Informação</label>
+          </li>
+          <li>
+            <label><input type="checkbox" id="info_10" onclick="updateProgressBar(this.id)"> 10. Montagem e Manutenção
+              de Computadores</label>
+          </li>
         </ul>
       </form>
     </div>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Recuperar os estados marcados dos checkboxes armazenados no localStorage
-      var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-      checkboxes.forEach(function (checkbox) {
-        var checkboxId = checkbox.id;
-        var isChecked = localStorage.getItem(checkboxId) === "true";
-        checkbox.checked = isChecked;
-      });
 
-      // Atualizar a barra de progresso inicialmente
-      updateProgressBar();
-    });
-
-    function updateProgressBar(checkboxId) {
-      var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-      var checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-      var progress = (checkedCheckboxes.length / checkboxes.length) * 100;
-      document.getElementById('progress').style.width = progress + '%';
-      document.getElementById('progress-text').textContent = progress.toFixed(2) + '%';
-
-      // Armazenar o estado marcado no localStorage
-      if (checkboxId) {
-        var checkbox = document.getElementById(checkboxId);
-        localStorage.setItem(checkboxId, checkbox.checked);
-      }
-    }
-  </script>
 </body>
 
 </html>

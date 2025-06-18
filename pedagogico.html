@@ -5,8 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legislação e Educação</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
     <link rel="icon" type="image/png" href="img/studying.png">
+
+    <script type="module">
+        import { initProgress } from './js/progress.js';
+        import { saveProgressSupabase, loadProgressSupabase } from './js/script.js';
+    
+        document.addEventListener("DOMContentLoaded", initProgress);
+    </script>
+
 </head>
 
 <body>
@@ -73,34 +81,6 @@
 
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Recuperar os estados marcados dos checkboxes armazenados no localStorage
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            checkboxes.forEach(function (checkbox) {
-                var checkboxId = checkbox.id;
-                var isChecked = localStorage.getItem(checkboxId) === "true";
-                checkbox.checked = isChecked;
-            });
-
-            // Atualizar a barra de progresso inicialmente
-            updateProgressBar();
-        });
-
-        function updateProgressBar(checkboxId) {
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            var checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-            var progress = (checkedCheckboxes.length / checkboxes.length) * 100;
-            document.getElementById('progress').style.width = progress + '%';
-            document.getElementById('progress-text').textContent = progress.toFixed(2) + '%';
-
-            // Armazenar o estado marcado no localStorage
-            if (checkboxId) {
-                var checkbox = document.getElementById(checkboxId);
-                localStorage.setItem(checkboxId, checkbox.checked);
-            }
-        }
-    </script>
 </body>
 
 </html>
