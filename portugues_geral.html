@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letras IFRN</title>
+    <title>Português - IF Sertão 2025</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
     <link rel="icon" type="image/png" href="img/studying.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap"
@@ -12,7 +12,6 @@
     <script type="module">
         import { initProgress } from './js/progress.js';
         import { saveProgressSupabase, loadProgressSupabase } from './js/script.js';
-    
         document.addEventListener("DOMContentLoaded", initProgress);
     </script>
 </head>
@@ -24,55 +23,76 @@
         </div>
     </div>
 
-    <ul>
-        <li class="btinicio">
-            <img src="img/casa.png" alt="início" width="30" height="30">
-            <h3><a href="index.html"> Início </a></h3>
-        </li>
-    </ul>
+    <header style="margin-bottom: 24px;">
+        <h1 style="margin-top: 40px;">Português para Todos os Cargos</h1>
+        <div class="btinicio">
+            <a href="index.html">
+                <img src="img/casa.png" alt="Início" width="30" height="30">
+            </a>
+        </div>
+    </header>
 
-    <form>
-        <h2>LÍNGUA PORTUGUESA</h2>
-        <ul>
-            <li>
-                <label><input type="checkbox" id="port_1" onclick="updateProgressBar(this.id)"> 1. Processos de
-                    composição de texto: descrição, narração, dissertação e injunção.</label>
-            </li>
-            <li>
-                <label><input type="checkbox" id="port_2" onclick="updateProgressBar(this.id)"> 2. Morfossintaxe
-                    dos nomes e determinantes.</label>
-            </li>
-            <li>
-                <label><input type="checkbox" id="port_3" onclick="updateProgressBar(this.id)"> 3. Processos de
-                    coordenação e subordinação.</label>
-            </li>
-            <li>
-                <label><input type="checkbox" id="port_4" onclick="updateProgressBar(this.id)"> 4. Estrutura do
-                    período e da oração: aspectos semânticos e sintáticos.</label>
-            </li>
-            <li>
-                <label><input type="checkbox" id="port_5" onclick="updateProgressBar(this.id)"> 5. Regência
-                    Nominal e Verbal.</label>
-            </li>
-            <li>
-                <label><input type="checkbox" id="port_6" onclick="updateProgressBar(this.id)"> 6. Emprego do
-                    sinal indicativo da crase.</label>
-            </li>
-            <li>
-                <label><input type="checkbox" id="port_7" onclick="updateProgressBar(this.id)"> 7. A variação
-                    linguística e a língua padrão.</label>
-            </li>
-            <li>
-                <label><input type="checkbox" id="port_8" onclick="updateProgressBar(this.id)"> 8. As funções da
-                    linguagem. Língua escrita e falada: a influência da oralidade na língua escrita.</label>
-            </li>
-            <li>
-                <label><input type="checkbox" id="port_9" onclick="updateProgressBar(this.id)"> 9. Coesão e
-                    coerência Textual</label>
-            </li>
-        </ul>
-    </form>
+    <main>
+        <section class="container" style="max-width: 700px;">
+            <h2>Língua Portuguesa</h2>
+            <form>
+                <ul>
+                    <li>
+                        <label><input type="checkbox" id="port_1" onclick="updateProgressBar(this.id)"> 1. Processos de
+                            composição de texto: descrição, narração, dissertação e injunção.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="port_2" onclick="updateProgressBar(this.id)"> 2. Morfossintaxe
+                            dos nomes e determinantes.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="port_3" onclick="updateProgressBar(this.id)"> 3. Processos de
+                            coordenação e subordinação.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="port_4" onclick="updateProgressBar(this.id)"> 4. Estrutura do
+                            período e da oração: aspectos semânticos e sintáticos.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="port_5" onclick="updateProgressBar(this.id)"> 5. Regência
+                            Nominal e Verbal.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="port_6" onclick="updateProgressBar(this.id)"> 6. Emprego do
+                            sinal indicativo da crase.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="port_7" onclick="updateProgressBar(this.id)"> 7. A variação
+                            linguística e a língua padrão.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="port_8" onclick="updateProgressBar(this.id)"> 8. As funções da
+                            linguagem. Língua escrita e falada: a influência da oralidade na língua escrita.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="port_9" onclick="updateProgressBar(this.id)"> 9. Coesão e
+                            coerência Textual</label>
+                    </li>
+                </ul>
+            </form>
+        </section>
+    </main>
 
+    <footer class="footer">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <img src="img/studying.png" alt="Estudando">
+            <p class="footer-title">
+                Página de Estudos IF Sertão 2025
+            </p>
+            <p class="footer-desc">
+                Recursos gratuitos para ajudar na sua preparação para o Concurso Público de Professor do IF Sertão.
+                Aproveite os materiais, organize seus estudos e boa sorte na sua jornada!
+            </p>
+            <p class="footer-dev">
+                Desenvolvido por Leno Silvestre &mdash; <span style="font-style: italic;">Projeto independente, sem vínculo oficial com o IF Sertão</span>
+            </p>
+        </div>
+    </footer>
 </body>
 
 </html>
