@@ -32,7 +32,7 @@
             e.preventDefault();
             const email = document.getElementById('recover-email').value;
             const { error } = await supabase.auth.resetPasswordForEmail(email, {
-                redirectTo: window.location.origin + '/resetar_senha.html'
+                redirectTo: window.location.origin 
             });
             if (error) {
                 message.textContent = 'Erro: ' + error.message;
