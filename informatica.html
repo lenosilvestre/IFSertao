@@ -7,7 +7,8 @@
     <title>Informática - IF Sertão 2025</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
     <link rel="icon" type="image/png" href="img/studying.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
     <script type="module">
         import { initProgress } from './js/progress.js';
         import { saveProgressSupabase, loadProgressSupabase } from './js/script.js';
@@ -37,34 +38,93 @@
             <form>
                 <ul>
                     <li>
-                        <label><input type="checkbox" id="info_1" onclick="updateProgressBar(this.id)"> 1. Fundamentos de Banco de Dados e Linguagem SQL</label>
+                        <label><input type="checkbox" id="info_1" onclick="updateProgressBar(this.id)"> 1. Fundamentos
+                            de Banco de Dados e Linguagem SQL</label>
+
+                    <li class="subitem">Banco de Dados: Sistemas de Gerenciamento de Banco de Dados (SGBD); modelo
+                        relacional; normalização de dados; álgebra relacional; Linguagem de Definição e Manipulação de
+                        Dados (SQL no PostgreSQL e MySQL); gerência de banco de dados; recuperação de falhas em SGBD.
+                    </li>
+
                     </li>
                     <li>
-                        <label><input type="checkbox" id="info_2" onclick="updateProgressBar(this.id)"> 2. Programação orientada a objeto</label>
+                        <label><input type="checkbox" id="info_2" onclick="updateProgressBar(this.id)"> 2. Programação
+                            orientada a objeto</label>
+                    <li class="subitem">
+                        <p> Conceitos de Programação Orientada a Objetos: fundamentos; classes; objetos; atributos;
+                            métodos; herança; encapsulamento; polimorfismo. </p>
+                    </li>
                     </li>
                     <li>
-                        <label><input type="checkbox" id="info_3" onclick="updateProgressBar(this.id)"> 3. Experiência do Usuário</label>
+                        <label><input type="checkbox" id="info_3" onclick="updateProgressBar(this.id)"> 3. Experiência
+                            do Usuário</label>
+                    <li class="subitem">
+                        <p>Desenvolvimento front-end: usabilidade; acessibilidade; arquitetura da informação. </p>
+                    </li>
                     </li>
                     <li>
-                        <label><input type="checkbox" id="info_4" onclick="updateProgressBar(this.id)"> 4. Engenharia de Software</label>
+                        <label><input type="checkbox" id="info_4" onclick="updateProgressBar(this.id)"> 4. Engenharia de
+                            Software</label>
+                    <li class="subitem">
+                        <p>Análise de Sistemas: modelagem de sistemas baseada em UML; diagramas de caso de uso, diagrama
+                            de classes, diagrama de estados e diagramas de sequência. </p>
+                    </li>
+                    <li class="subitem">
+                        <p> Engenharia e Arquitetura de Software: Definição dos conceitos de arquitetura de software,
+                            componentes, frameworks e padrões de projeto; Objetivos, conceitos e evolução da Engenharia
+                            de Software; Paradigmas de desenvolvimento de software; Evolução das metodologias de
+                            sistemas e suas principais técnicas; Processo de desenvolvimento de software; Modelos de
+                            software; Ciclo de vida; Qualidade de software e seus modelos; Melhores práticas no
+                            desenvolvimento de software; Arquitetura de microsserviços. </p>
+                    </li>
+                    <li class="subitem">
+                        <p>Testes de Software: unitário, de caixa-branca, de caixa preta; validação e verificação de
+                            software; automação de testes de software.</p>
+                    </li>
                     </li>
                     <li>
-                        <label><input type="checkbox" id="info_5" onclick="updateProgressBar(this.id)"> 5. Desenvolvimento Front-end e Back-end</label>
+                        <label><input type="checkbox" id="info_5" onclick="updateProgressBar(this.id)"> 5.
+                            Desenvolvimento Front-end e Back-end</label>
+                    <li class="subitem">
+                        <p>
+                            Desenvolvimento front-end: requisições cliente-servidor com HTTP; HTML; CSS; Javascript;
+                            React JS; Angular.
+                        </p>
+                    </li>
+                    <li class="subitem">
+                        <p>
+                            Desenvolvimento back-end: Python; Framework Django 4; PHP; Framework Laravel 10; Javascript
+                            (back-end).
+                        </p>
+                    </li>
+
+                              </li>
+                    <li>
+                        <label><input type="checkbox" id="info_6" onclick="updateProgressBar(this.id)"> 6. Redes de
+                            computadores: principais tecnologias</label>
                     </li>
                     <li>
-                        <label><input type="checkbox" id="info_6" onclick="updateProgressBar(this.id)"> 6. Redes de computadores: principais tecnologias</label>
+                        <label><input type="checkbox" id="info_7" onclick="updateProgressBar(this.id)"> 7. Fundamentos e
+                            tecnologias de redes sem fio</label>
                     </li>
                     <li>
-                        <label><input type="checkbox" id="info_7" onclick="updateProgressBar(this.id)"> 7. Fundamentos e tecnologias de redes sem fio</label>
+                        <label><input type="checkbox" id="info_8" onclick="updateProgressBar(this.id)"> 8. Segurança e
+                            auditoria de sistemas</label>
                     </li>
                     <li>
-                        <label><input type="checkbox" id="info_8" onclick="updateProgressBar(this.id)"> 8. Segurança e auditoria de sistemas</label>
+                        <label><input type="checkbox" id="info_9" onclick="updateProgressBar(this.id)"> 9. Sistema de
+                            Informação</label>
+                    <li class="subitem">
+                        <p>
+                            Algoritmos e Estruturas de Dados: comandos sequenciais; estruturas condicionais; estruturas
+                            de repetição; variáveis e tipos de dados; vetores; matrizes; listas; pilhas; árvores;
+                            algoritmos de ordenação e busca; pseudocódigo; álgebra booleana; rastreio de algoritmos.
+                        </p>
+                    </li>
                     </li>
                     <li>
-                        <label><input type="checkbox" id="info_9" onclick="updateProgressBar(this.id)"> 9. Sistema de Informação</label>
-                    </li>
-                    <li>
-                        <label><input type="checkbox" id="info_10" onclick="updateProgressBar(this.id)"> 10. Montagem e Manutenção de Computadores</label>
+                        <label><input type="checkbox" id="info_10" onclick="updateProgressBar(this.id)"> 10. Montagem e
+                            Manutenção de Computadores</label>
                     </li>
                 </ul>
             </form>
@@ -82,7 +142,8 @@
                 Aproveite os materiais, organize seus estudos e boa sorte na sua jornada!
             </p>
             <p class="footer-dev">
-                Desenvolvido por Leno Silvestre &mdash; <span style="font-style: italic;">Projeto independente, sem vínculo oficial com o IF Sertão</span>
+                Desenvolvido por Leno Silvestre &mdash; <span style="font-style: italic;">Projeto independente, sem
+                    vínculo oficial com o IF Sertão</span>
             </p>
         </div>
     </footer>
