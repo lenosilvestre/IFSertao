@@ -44,11 +44,11 @@ export async function saveProgressSupabase(userId, checkboxesSelector = 'input[t
 // Função para carregar progresso do Supabase
 export async function loadProgressSupabase(userId, checkboxesSelector = 'input[type="checkbox"]') {
     const pageKey = getPageKey();
-    const { data, error } = await supabase
-        .from('progresso')
-        .select('data')
-        .eq('user_id', userId)
-        .single();
+    // const { data, error } = await supabase
+    //     .from('progresso')
+    //     .select('data')
+    //     .eq('user_id', userId)
+    //     .single();
 
     if (data && data.data && data.data[pageKey]) {
         const checkboxes = document.querySelectorAll(checkboxesSelector);
