@@ -9,13 +9,13 @@ export async function updateProgressBar(userId) {
     document.getElementById('progress').style.width = progress + '%';
     document.getElementById('progress-text').textContent = progress.toFixed(2) + '%';
 
-    await saveProgressSupabase(userId);
+    //await saveProgressSupabase(userId);
 }
 
 // Inicializa o progresso ao carregar a página
 export async function initProgress() {
     const userId = await getUserId();
-    await loadProgressSupabase(userId);
+    //await loadProgressSupabase(userId);
     updateProgressBar(userId);
 
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
